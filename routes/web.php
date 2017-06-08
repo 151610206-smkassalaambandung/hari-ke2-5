@@ -39,3 +39,17 @@ Route::get('sadayana', function(){
 	$y = App\produk::all();
 	return $c.'<br><br>'.$t.'<br><br>'.$y;
 });
+
+Route::get('/test','MyController@percobaan');
+
+Route::get('/test2','MyController@percobaan2');
+
+Route::get('/test3','MyController@percobaan3');
+Route::get('/bio','MyController@bio');
+Route::get('/ifelse','MyController@percobaan4');
+Route::get('/buah','MyController@percobaan5');
+Route::get('/tugash3','MyController@tugash3');
+
+Route::get('/param/{id}', function ($id),'MyController@param') { 
+			return 'param '.$id; 
+		});
