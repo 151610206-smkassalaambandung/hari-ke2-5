@@ -51,21 +51,26 @@ class MyController extends Controller
 
      public function tugash3()
     {
-    	$mahluk=['sapi','buaya','kucing','singa','macan'];
-    	$buah = ['mangga','jeruk','apel','anggur','kurma'];
-    	$komputer=['mouse','keyboard','monitor','cpu','motherboard'];
+    	$mahluk    = ['sapi','buaya','kucing','singa','macan'];
+    	$buah      = ['mangga','jeruk','apel','anggur','kurma'];
+    	$komputer  = ['mouse','keyboard','monitor','cpu','motherboard'];
     	return view('tugash3', compact('buah','mahluk','komputer'));
     }
 
-    public function param($id)
+    public function param($id,$id2)
     {
-    	$id=['sapi','buaya','kucing','singa','macan'];
-    	
+    	$wow = ['binatang'=>['kucing','hamster','kelinci'],
+                'buah'    =>['mangga','sirsak','anggur'  ],
+                'komputer'=>['cpu','monitor','mouse'     ]
+                 ];
+                 
+        $kuc = ['kucing anggora','kucing garong','kucing black'];
+                 $waw = $wow[$id];
+                 $dul = $kuc[$id2];
+                 return view('haha', compact('waw','dul','id','id2'));
     
     }
 
 
 
 }
-$b= ['mangga','jeruk','apel','anggur','kurma'];
-    	$c=['mouse','keyboard','monitor','cpu','motherboard'];

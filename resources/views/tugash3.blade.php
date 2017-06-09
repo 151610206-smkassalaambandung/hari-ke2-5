@@ -11,7 +11,8 @@
 
 		<br>@foreach($komputer as $data)
 				{{$data}}<hr>
-		@endforeach		
+		@endforeach
+				
 		<br>@foreach($mahluk as $data)
 				{{$data}}<hr>
 		@endforeach
