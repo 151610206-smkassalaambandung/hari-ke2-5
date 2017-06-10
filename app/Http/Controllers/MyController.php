@@ -57,17 +57,28 @@ class MyController extends Controller
     	return view('tugash3', compact('buah','mahluk','komputer'));
     }
 
-    public function param($id,$id2)
+    public function param($data, $data2 = null)
     {
-    	$wow = ['binatang'=>['kucing','hamster','kelinci'],
-                'buah'    =>['mangga','sirsak','anggur'  ],
-                'komputer'=>['cpu','monitor','mouse'     ]
-                 ];
+    	$array = array('binatang'=>['kucing'=>['anggora','persia','black'],
+                                    'hamster'=>['hamtaro','hamtari'],
+                                    'kelinci'=>['anggora','persia']],
+
+                        'buah'    =>['mangga'=>['harumanis','marijan'],
+                                    'sirsak'=>['hijau','hitam'],
+                                    'anggur'=>['ungu','hijau']],
+
+                        'komputer'=>['asus'=>['456UR','456'],
+                                    'dell'=>['Alienware','Inspiron'],
+                                    'acer'=>['6930','7780']]
+                 );
                  
-        $kuc = ['kucing anggora','kucing garong','kucing black'];
-                 $waw = $wow[$id];
-                 $dul = $kuc[$id2];
-                 return view('haha', compact('waw','dul','id','id2'));
+                if ($data){
+                    $query = (array_keys($array[$data]));
+                }
+                if ($data2){
+                    $query = ($array[$data][$data2]);
+                }
+                return view('parameter.param1', compact('query','data','data2'));
     
     }
 

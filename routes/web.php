@@ -51,6 +51,6 @@ Route::get('sadayana', function(){
 //Route::get('/tugash3','MyController@tugash3');
 
 
-Route::get('param/{id?}/{id2?}','MyController@param') ;
+Route::get('param/{data?}/{data2?}','MyController@param') ;
 
-
+Route::get('/coba/{siswa}', 'SiswaController@show');
